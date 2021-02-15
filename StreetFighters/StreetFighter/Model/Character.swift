@@ -22,27 +22,16 @@ class Character {
     var allCharacters: [Character] = []
     
     
-    // Nouvelle arme dans le coffre
-    
-   
-    
-
-    
     // Arme
     var weapon: Weapon
     
-  
-    
-    
-    
+
     //Initialiser tous les éléments
     
     init(name: String, lifePoint: Int, weapon: Weapon) {
         self.name = name
         self.lifePoint = lifePoint
         self.weapon = weapon
-       
-
     }
     
 }
