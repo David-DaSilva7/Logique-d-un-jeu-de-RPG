@@ -15,7 +15,7 @@ class Player {
     var name: String
     
     // tableau des characters
-    var characters: Character
+    var characters: [Character]
     
     init (name: String, characters: Character)
     self.name = name
@@ -39,40 +39,44 @@ class Player {
 }
 
 
-// First step of each player, this func create the character (fighter, colossus, etc...) and name it
+// choisir les personnages de notre équipe
+    
 func chooseCharacter() {
-    if let readline = readLine() {
-        if let choice = Int(readline) {
+
+        if let choice = readLine() {
+            
             switch choice {
                 
-            case 1:
-                
+            case "1":
+              
                 Sangoku
                 
-            case 2:
+            case "2":
                 
                 Sangohan
                 
-            case 3:
+            case "3":
                 
                 Freezer
                 
-            case 4:
+            case "4":
                 
                 Krillin
                 
-            case 5:
+            case "5":
                 
                 Vegeta
                 
-            case 6 :
+            case "6":
                 
                 Trunks
             
+            default:
+                print("Erreur")
             }
         }
     }
-}
+
 
 // Choisir son équipe
 func chooseTeam() {
@@ -83,7 +87,7 @@ func chooseTeam() {
     self.maxCharacter = maxCharacter
 }
     
-    while allCharacters < maxCharacter {
+    while characters.count < maxCharacter {
         
         charactersTeam()
         chooseCharacter()

@@ -25,7 +25,7 @@ class Character {
     // Arme
     var weapon: Weapon
     
-
+    
     //Initialiser tous les éléments
     
     init(name: String, lifePoint: Int, weapon: Weapon) {
