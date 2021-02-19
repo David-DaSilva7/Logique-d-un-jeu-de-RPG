@@ -12,26 +12,22 @@ import Foundation
 class Player {
     
     // nom du joueur 1 et du joueur 2
-    var name: String
+    var named = readLine()
     
     // tableau des characters
     var characters: [Character]
-    
-    init (name: String, characters: Character)
-    self.name = name
-    self.characters = characters
     
 
     // Les différents personnagesavec leur caractéristiques
     func charactersTeam() {
         print(" tu as \(characters.count) personnages dans ton équipe ")
         print("choisis ton combattant"
-        + "\n1. Sangoku (100 Life, 20 Dégats)"
-        + "\n2. Sangohan (90 Life, 25 Dégats)"
-        + "\n3. Freezer (80 Life, 30 Dégats)"
-        + "\n4. Krillin (85 Life, 27 Dégats)"
-        + "\n5. Vegeta (100 Life, 20 Dégats)"
-        + "\n6. Trunks (95 Life, 23 Dégats)"
+        + "\n1. Ryu (100 Life, 20 Dégats)"
+        + "\n2. Ken (90 Life, 25 Dégats)"
+        + "\n3. Ibuki (80 Life, 30 Dégats)"
+        + "\n4. Gouken (85 Life, 27 Dégats)"
+        + "\n5. Cody (100 Life, 20 Dégats)"
+        + "\n6. Makoto (95 Life, 23 Dégats)"
         
         
     )
@@ -49,28 +45,30 @@ func chooseCharacter() {
                 
             case "1":
               
-                Sangoku
+                ryu
+                characters.append(ryu)
                 
             case "2":
                 
-                Sangohan
-                
+                ken
+                characters.append(ken)
             case "3":
                 
-                Freezer
-                
+                ibuki()
+                characters.append(ibuki)
             case "4":
                 
-                Krillin
-                
+                gouken()
+                characters.append(gouken)
             case "5":
                 
-                Vegeta
-                
+                cody()
+                characters.append(cody)
             case "6":
                 
-                Trunks
-            
+                makoto()
+                characters.append(makoto)
+                
             default:
                 print("Erreur")
             }
@@ -78,24 +76,30 @@ func chooseCharacter() {
     }
 
 
+    // recapitulatif de notre équipe
+    func teamRecap() {
+        
+        for character in characters {
+            print("tu as \(character.name) dans ton équipe")
+        }
+    }
+    
 // Choisir son équipe
 func chooseTeam() {
     
     let maxCharacter = 3
     
-    init(maxCharacter: int) {
-    self.maxCharacter = maxCharacter
-}
     
     while characters.count < maxCharacter {
         
         charactersTeam()
         chooseCharacter()
     }
+    teamRecap()
 }
     
     
+ 
     
-    
-    
+
 }

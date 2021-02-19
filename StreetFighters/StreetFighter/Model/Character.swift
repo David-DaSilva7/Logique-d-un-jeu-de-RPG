@@ -17,14 +17,11 @@ class Character {
     //Point de vie du personnage
     var lifePoint: Int
         
-    
     //Tableau montrant l'ensemble des 3 personnages de chaque joueur
     var allCharacters: [Character] = []
     
-    
     // Arme
     var weapon: Weapon
-    
     
     //Initialiser tous les éléments
     
@@ -32,6 +29,11 @@ class Character {
         self.name = name
         self.lifePoint = lifePoint
         self.weapon = weapon
+    }
+    
+    //Soigner de 15 points de vie un personnage
+    func healCharacter() {
+        lifePoint += 15
     }
     
 }

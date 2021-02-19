@@ -12,10 +12,15 @@ import Foundation
 class Chest {
     
     
+// arme aleatoire qu'on peut avoir dans un coffre
+    let randomWeapons: [Weapon] = [
+    Weapon(damage: 35 , name: "Hache 🪓"),
+    Weapon(damage: 30, name: "Couteau 🔪"),
+    Weapon(damage: 25, name: "Ciseau ✂️")
+           ]
 
-//Dégats infligés par l'arme aléatoire du coffre
-    
-var randomWeapon = Weapon(damage: 25)
-
-    
+    func randomWeapon() -> Weapon {
+    let ramdomIndex = arc4random_uniform(3)
+    return randomWeapons[Int(ramdomIndex)]
+    }
 }

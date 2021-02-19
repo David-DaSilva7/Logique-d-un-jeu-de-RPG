@@ -13,11 +13,14 @@ import Foundation
 class Weapon {
     
     //Nom du personnage et les dommage qu'effectue son arme sur les points de vie
+    var name: String
     var damage: Int
     
     // initialiser
-    init(damage: Int){
+    init(damage: Int, name: String){
     
+        self.name = name
         self.damage = damage
+        
     }
 }

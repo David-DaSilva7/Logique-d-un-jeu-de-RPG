@@ -9,11 +9,12 @@ import Foundation
 
 
 
-var sangoku = Character(name: "Sangoku", lifePoint: 100, weapon: 20)
-var sangohan = Character(name: "Sangohan", lifePoint: 90, weapon: 25)
-var freezer = Character(name: "Freezer", lifePoint: 80, weapon: 30)
-var vegeta = Character(name: "Vegeta", lifePoint: 100, weapon: 20)
-var trunks = Character(name: "Trunks", lifePoint: 95, weapon: 23)
-var krillin = Character(name: "Krillin", lifePoint: 85, weapon: 27)
+var ryu = Character(name: "Ryu", lifePoint: 100, weapon:Weapon(damage: 20, name: "Épée 🗡"))
+var ken = Character(name: "Ken", lifePoint: 90, weapon:Weapon(damage: 25, name: "Pistolet 🔫"))
+var ibuki = Character(name: "Ibuki", lifePoint: 80, weapon:Weapon(damage: 30, name: "Chaine ⛓"))
+var gouken = Character(name: "Gouken", lifePoint: 100, weapon:Weapon(damage: 20, name: "Scie 🪚"))
+var cody = Character(name: "Cody", lifePoint: 95, weapon:Weapon(damage: 23, name: "Marteau 🔨"))
+var makoto = Character(name: "Makoto", lifePoint: 85, weapon:Weapon(damage: 27, name: "Tournevis 🪛"))
+
 
 
