@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  StreetFighter
+//  @
 //
 //  Created by David Da Silva on 05/02/2021.
 //
@@ -17,4 +17,10 @@ var cody = Character(name: "Cody", lifePoint: 95, weapon:Weapon(damage: 23, name
 var makoto = Character(name: "Makoto", lifePoint: 85, weapon:Weapon(damage: 27, name: "Tournevis 🪛"))
 
 
+var playerOne = Player(name: "Joueur 1", characters: [])
+print("Appuyez sur une touche pour commencer la partie")
+_ = readLine()
 
+var playerTwo = Player(name: "Joueur 2", characters: [])
+print("Appuyez sur une touche pour commencer la partie")
+_ = readLine()

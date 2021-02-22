@@ -17,8 +17,6 @@ class Character {
     //Point de vie du personnage
     var lifePoint: Int
         
-    //Tableau montrant l'ensemble des 3 personnages de chaque joueur
-    var allCharacters: [Character] = []
     
     // Arme
     var weapon: Weapon

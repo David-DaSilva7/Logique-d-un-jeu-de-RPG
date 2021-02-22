@@ -13,15 +13,16 @@ import Foundation
 class Game {
     
 // Chance d'obtenir un coffre
-    var chanceChest = true
+    var chanceChest = [true,false]
     
-// joueur 1
-    var playerOne: Player
+    func chanceChests() -> Bool {
+        let randomIndex = arc4random_uniform(UInt32(chanceChest.count))
+        return chanceChest = [Int(randomIndex)]
+        
+    }
     
-//joueur 2
-    var playerTwo: Player
 
-
+    
 // fonction pour introduire la partie
 func StartGame() {
     
@@ -34,7 +35,7 @@ func StartGame() {
             + "\n4. Gouken (85 Life, 27 Dégats)"
             + "\n5. Cody (100 Life, 20 Dégats)"
             + "\n6. Makoto (95 Life, 23 Dégats)")
-    print("Le combat commence, lorsqu'un personnage n'a plus de point de vie, celui-ci est remplacé par un personnage qui a encore de la vie")
+    print("Le combat commence, au tour par tour, le joueur 1 choisit le personnage de son équipe qu va combattre, si la partie n'est pas terminée, c'est au tour du joueur 2")
     print("Si un coffre apparait, vous pouez prendre l'arme du coffre")
     print("Si l'intégralité de ton équipe n'a plus de point de vie, la partie est perdu")
 
@@ -44,10 +45,10 @@ func StartGame() {
 // fonction pour creer son équipe
 func createTeam(){
     
-    print("\(playerOne.named) choisis ton équipe")
+    print("\(playerOne.name) choisis ton équipe")
     playerOne.chooseTeam()
     
-    print("\(playerTwo.named) choisis ton équipe")
+    print("\(playerTwo.name) choisis ton équipe")
     playerTwo.chooseTeam()
     
 }
@@ -57,7 +58,7 @@ func startBattle() {
      print("Combatez!!!!")
     
     
-    while playerOne.characters.lifePoint> 0  {
+    while playerOne.characters.lifePoint > 0  {
         
         if chanceChest == true {
             newWeapon()
@@ -67,7 +68,7 @@ func startBattle() {
         if playerOne.characters.lifePoint == 0 {
             changeCharacter()
             
-        } 
+        }
 }
 }
     

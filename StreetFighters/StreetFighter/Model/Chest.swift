@@ -20,7 +20,7 @@ class Chest {
            ]
 
     func randomWeapon() -> Weapon {
-    let ramdomIndex = arc4random_uniform(3)
-    return randomWeapons[Int(ramdomIndex)]
+        let ramdomIndex = arc4random_uniform(UInt32(randomWeapons.count))
+        return randomWeapons[Int(ramdomIndex)]
     }
 }
