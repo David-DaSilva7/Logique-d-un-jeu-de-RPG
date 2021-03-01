@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 var ryu = Character(name: "Ryu", lifePoint: 100, weapon:Weapon(damage: 20, name: "Épée 🗡"))
 var ken = Character(name: "Ken", lifePoint: 90, weapon:Weapon(damage: 25, name: "Pistolet 🔫"))
 var ibuki = Character(name: "Ibuki", lifePoint: 80, weapon:Weapon(damage: 30, name: "Chaine ⛓"))
@@ -24,3 +23,6 @@ _ = readLine()
 var playerTwo = Player(name: "Joueur 2", characters: [])
 print("Appuyez sur une touche pour commencer la partie")
 _ = readLine()
+
+
+

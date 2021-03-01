@@ -11,13 +11,13 @@ import Foundation
 // Classe charactere comprenant les style de chaque personnage
 class Character {
     
+    
     // nom du personnage
     var name: String
     
     //Point de vie du personnage
     var lifePoint: Int
         
-    
     // Arme
     var weapon: Weapon
     
@@ -28,6 +28,7 @@ class Character {
         self.lifePoint = lifePoint
         self.weapon = weapon
     }
+    
     
     //Soigner de 15 points de vie un personnage
     func healCharacter() {

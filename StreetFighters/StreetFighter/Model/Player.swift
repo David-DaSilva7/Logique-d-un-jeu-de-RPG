@@ -31,21 +31,27 @@ class Player {
         }
     }
     
+    
+    var maxCharacter = 3
+    
     // Choisir son équipe
-   func chooseTeam() {
-     
-     let maxCharacter = 3
-     
-     
-     while characters.count < maxCharacter {
-     
-     charactersTeam()
-     }
-     teamRecap()
-     }
+    func chooseTeam() {
+        
+        while characters.count < maxCharacter {
+          
+       
+    }
+    }
     
     
-    
-    
+        
     
 }
+     
+    
+
+    
+    
+    
+
+

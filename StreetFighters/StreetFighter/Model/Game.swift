@@ -12,16 +12,19 @@ import Foundation
 
 class Game {
     
-// Chance d'obtenir un coffre
-    var chanceChest = [true,false]
+    var players: [Player] = []
     
-    func chanceChests() -> Bool {
-        let randomIndex = arc4random_uniform(UInt32(chanceChest.count))
-        return chanceChest = [Int(randomIndex)]
+    let game  = Game(players: [
+        Player(name: "Joueur 1", characters: []),
+        Player(name: "Joueur 2", characters: []),
         
+    ])
+    
+    init(players: [Player]) {
+        self.players = players
     }
     
-
+    
     
 // fonction pour introduire la partie
 func StartGame() {
@@ -41,7 +44,6 @@ func StartGame() {
 
 }
 
-    
 // fonction pour creer son équipe
 func createTeam(){
     
@@ -58,28 +60,22 @@ func startBattle() {
      print("Combatez!!!!")
     
     
-    while playerOne.characters.lifePoint > 0  {
-        
-        if chanceChest == true {
-            newWeapon()
+    while playerOne.characters.count != 0 || playerTwo.characters.count != 0  {
+        print(" \(playerOne.name) choisit son personnage et le personnage ennemi à attaquer")
+        playerOne.teamRecap()
+                            
+        }
 
-        }
-        
-        if playerOne.characters.lifePoint == 0 {
-            changeCharacter()
-            
-        }
-}
 }
     
     
 // fonction qui annonce le vainqueur
 func displayWinner(){
     
-    if playerOne.characters == 0 {
+    if playerOne.characters.count == 0 {
     print("Team \(playerTwo) est le meilleur combattant")
 
-    } else if playerTwo.allCharacters == 0 {
+    } else if playerTwo.characters.count == 0 {
         print("Team \(playerOne) est le meilleur combattant")
 
     }

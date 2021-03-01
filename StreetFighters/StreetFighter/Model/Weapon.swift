@@ -12,6 +12,7 @@ import Foundation
 
 class Weapon {
     
+    
     //Nom de l'arme et les dommages qu'effectue son arme sur les points de vie
     var name: String
     var damage: Int
