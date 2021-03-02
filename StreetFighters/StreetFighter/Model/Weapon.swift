@@ -7,11 +7,9 @@
 
 import Foundation
 
-
 // Classe Weapon pour attribuer les dommages de chaque armes
 
 class Weapon {
-    
     
     //Nom de l'arme et les dommages qu'effectue son arme sur les points de vie
     var name: String
@@ -19,9 +17,8 @@ class Weapon {
     
     // initialiser
     init(damage: Int, name: String){
-    
+        
         self.name = name
         self.damage = damage
-        
     }
 }

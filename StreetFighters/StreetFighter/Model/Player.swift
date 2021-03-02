@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // Classe player
 class Player {
     
@@ -15,43 +14,46 @@ class Player {
     var name: String
     
     // tableau des personnages
-    var characters: [Character]
+    var charactersOne: [Character] = []
+    var charactersTwo: [Character] = []
     
-    init(name: String, characters: [Character]){
+    init(name: String, charactersOne: [Character], charactersTwo: [Character]){
         self.name = name
-        self.characters  = characters 
+        self.charactersOne = charactersOne
+        self.charactersTwo = charactersTwo
     }
     
-    
-    // recapitulatif de notre équipe
-    func teamRecap() {
-        
-        for character in characters {
-            print("tu as \(character.name) dans ton équipe")
+    // Fonction pour créer son équipe
+    func createTeams(){
+        for i in 0...2 {
+            print("\(playerOne.name) choisissez le nom de votre combattant")
+            if let named = readLine() {
+                print("Votre combattant se nomme \(named)")
+                charactersOne.append(Character(name: "\(named)", lifePoint: lifePoints[i], weapon: weapons[i]))
+            }
+            print("Votre équipe est constituée de :")
+            print(""
+                    + "\n1. \(charactersOne[0]) "
+                    + "\n2. \(charactersOne[1]) "
+                    + "\n3. \(charactersOne[2]) \n"
+            )
         }
+        for j in 3...5 {
+            print("\(playerTwo.name) choisissez le nom de votre combattant")
+            if let named = readLine() {
+                print("Votre combattant se nomme \(named)")
+                charactersTwo.append(Character(name: "\(named)", lifePoint: lifePoints[j], weapon: weapons[j]))
+            }
+        }
+        print("Votre équipe est constituée de :")
+        print(""
+                + "\n1. \(charactersTwo[3]) "
+                + "\n2. \(charactersOne[4]) "
+                + "\n3. \(charactersOne[5]) \n"
+        )
     }
-    
-    
-    var maxCharacter = 3
-    
-    // Choisir son équipe
-    func chooseTeam() {
-        
-        while characters.count < maxCharacter {
-          
-       
-    }
-    }
-    
-    
-        
-    
 }
-     
-    
 
-    
-    
-    
+
 
 
