@@ -28,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C88BBA4A25F264720001142A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C89977BE25CD5D8600794AAB /* StreetFighter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StreetFighter; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89977C125CD5D8600794AAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C89977E425CD6FDB00794AAB /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		C89977B525CD5D8600794AAB = {
 			isa = PBXGroup;
 			children = (
+				C88BBA4A25F264720001142A /* Info.plist */,
 				C89977C025CD5D8600794AAB /* StreetFighter */,
 				C89977BF25CD5D8600794AAB /* Products */,
 			);

@@ -11,7 +11,7 @@ import Foundation
 class Game {
     
     // fonction pour introduire la partie
-    func StartGame() {
+   static func StartGame() {
         
         print("Street Fighter!!!")
         print("Le combat commence, au tour par tour, le joueur 1 choisit le personnage de son équipe qui va combattre, si la partie n'est pas terminée, c'est au tour du joueur 2")
@@ -33,14 +33,24 @@ class Game {
     // fonction qui annonce le vainqueur
     func displayWinner(){
         
-        if playerOne.charactersOne.count == 0 {
+        if playerOne.charactersOne[0].lifePoint != 0 && playerOne.charactersOne[1].lifePoint != 0 && playerOne.charactersOne[2].lifePoint != 0 {
+            
             print("Team \(playerTwo) est le meilleur combattant")
             
-        } else if playerTwo.charactersTwo.count == 0 {
+        } else if playerTwo.charactersTwo[3].lifePoint != 0 && playerTwo.charactersTwo[4].lifePoint != 0 && playerTwo.charactersTwo[5].lifePoint != 0 {
+            
             print("Team \(playerOne) est le meilleur combattant")
         }
     }
+    
+    func startBattles() {
+    
+        while playerOne.charactersOne[0].lifePoint != 0 || playerTwo.charactersTwo[5].lifePoint != 0 {
+            
+            print(" \(playerOne) puisse choisis un personnage de son équipe, et le personnage qui va subir l’action (dans l’équipe adverse en cas d’attaque ou dans son équipe en cas de soin")
+            
+        }
+    }
 }
-
 
 

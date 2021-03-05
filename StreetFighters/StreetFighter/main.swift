@@ -21,7 +21,7 @@ var playerOne = Player(name: "Joueur 1", charactersOne: [], charactersTwo: [])
 var playerTwo = Player(name: "Joueur 2", charactersOne: [], charactersTwo: [])
 
 
-
+Game.StartGame()
 
 
 
