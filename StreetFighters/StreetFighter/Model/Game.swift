@@ -80,12 +80,12 @@ class Game {
             
             print(" \(playerOne.name) choisit un personnage de votre équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas d'un soin ")
             
-            playerOne.chooseCharacterTeam1()
+            playerOne.attackTeam1()
             
             
             print(" \(playerTwo.name) choisit un personnage de votre équipe, puis un personnage ennemis à attaquer, ou allié à soigner dans le cas d'un soin ")
             
-            playerTwo.chooseCharacterTeam2()
+            playerTwo.attackTeam2()
         
             
         }

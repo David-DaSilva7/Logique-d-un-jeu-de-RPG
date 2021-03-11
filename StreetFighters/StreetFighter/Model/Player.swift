@@ -23,7 +23,7 @@ class Player {
     }
     
     
-    func chooseCharacterTeam1() {
+    func attackTeam1() {
         
         print(""
                 + "\n1. Rentrer 1 pour choisir votre 1er combattant : \(characters[0].name) à \(characters[0].lifePoint) PV et inflige \(characters[0].weapon.damage) dégats avec \(characters[0].weapon.name) "
@@ -244,7 +244,7 @@ class Player {
     }
     
     
-    func chooseCharacterTeam2() {
+    func attackTeam2() {
         
         print(""
                 + "\n1. Rentrer 1 pour choisir votre 1er combattant : \(characters[0].name) à \(characters[0].lifePoint) PV et inflige \(characters[0].weapon.damage) dégats avec \(characters[0].weapon.name) "
