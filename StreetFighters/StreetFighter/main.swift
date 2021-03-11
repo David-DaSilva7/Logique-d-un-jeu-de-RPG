@@ -17,11 +17,12 @@ var weapons = [Weapon(damage: 20, name: "Épée 🗡"),
                Weapon(damage: 35, name: "Tournevis 🪛")]
 
 
-var playerOne = Player(name: "Joueur 1", charactersOne: [], charactersTwo: [])
-var playerTwo = Player(name: "Joueur 2", charactersOne: [], charactersTwo: [])
+var playerOne = Player(name: "Joueur 1", characters: [])
+var playerTwo = Player(name: "Joueur 2", characters: [])
 
 
 Game.StartGame()
+
 
 
 
