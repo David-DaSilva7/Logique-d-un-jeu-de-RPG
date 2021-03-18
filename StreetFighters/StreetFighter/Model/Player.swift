@@ -77,17 +77,17 @@ class Player {
                                 if playerToAttack.characters[0].lifePoint > 0 {
                                     print("Rentrer 1 pour combattre : \(playerToAttack.characters[0].name): \(playerToAttack.characters[0].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: choice-1)
+                                    print("Son 1er combattant est mort")
                                 }
                                 if playerToAttack.characters[1].lifePoint > 0 {
                                     print("Rentrer 2 pour combattre : \(playerToAttack.characters[1].name): \(playerToAttack.characters[1].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: choice-1)
+                                    print("Son 2ème combattant est mort")
                                 }
                                 if playerToAttack.characters[2].lifePoint > 0 {
                                     print("Rentrer 3 pour combattre : \(playerToAttack.characters[2].name): \(playerToAttack.characters[2].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: choice-1)
+                                    print("Son 3ème combattant est mort")
                                 }
                                 
                                 // Choisir le personnage adverse à attaquer
@@ -145,17 +145,17 @@ class Player {
                                 if playerToAttack.characters[0].lifePoint > 0 {
                                     print("Rentrer 1 pour combattre : \(playerToAttack.characters[0].name): \(playerToAttack.characters[0].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: choice-1)
+                                    print("Son 1er combattant est mort")
                                 }
                                 if playerToAttack.characters[1].lifePoint > 0 {
                                     print("Rentrer 2 pour combattre : \(playerToAttack.characters[1].name): \(playerToAttack.characters[1].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: choice-1)
+                                    print("Son 2ème combattant est mort")
                                 }
                                 if playerToAttack.characters[2].lifePoint > 0 {
                                     print("Rentrer 3 pour combattre : \(playerToAttack.characters[2].name): \(playerToAttack.characters[2].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: choice-1)
+                                    print("Son 3ème combattant est mort")
                                 }
                                 
                                 if let readline = readLine() {
@@ -209,17 +209,17 @@ class Player {
                                 if playerToAttack.characters[0].lifePoint > 0 {
                                     print("Rentrer 1 pour combattre : \(playerToAttack.characters[0].name): \(playerToAttack.characters[0].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: 0)
+                                    print("Son 1er combattant est mort")
                                 }
                                 if playerToAttack.characters[1].lifePoint > 0 {
                                     print("Rentrer 2 pour combattre : \(playerToAttack.characters[1].name): \(playerToAttack.characters[1].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: 1)
+                                    print("Son 2ème combattant est mort")
                                 }
                                 if playerToAttack.characters[2].lifePoint > 0 {
                                     print("Rentrer 3 pour combattre : \(playerToAttack.characters[2].name): \(playerToAttack.characters[2].lifePoint)PV")
                                 } else {
-                                    playerToAttack.characters.remove(at: 2)
+                                    print("Son 3ème combattant est mort")
                                 }
                                 
                                 if let readline = readLine() {
@@ -259,6 +259,15 @@ class Player {
                     print("Erreur")
                 }
             }
+        }
+        if playerToAttack.characters[0].lifePoint <= 0{
+            playerToAttack.characters.remove(at: 0)
+        }
+        if playerToAttack.characters[1].lifePoint <= 0{
+            playerToAttack.characters.remove(at: 1)
+        }
+        if playerToAttack.characters[2].lifePoint <= 0{
+            playerToAttack.characters.remove(at: 2)
         }
         Game.switchPlayer()
     }
