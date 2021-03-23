@@ -39,21 +39,17 @@ class Player {
     // Fonction pour attaquer la team adverse ou soigner un allié
     func attackTeam() {
         
-        let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
-        
+        Game.numberRound += 1
         if characters[0].lifePoint > 0 || characters[1].lifePoint > 0 || characters[2].lifePoint > 0 {
-            
             print(" \(name) choisit un personnage de votre équipe, puis un personnage ennemi à attaquer, ou allié à soigner dans le cas d'un soin ")
             print("")
-            
             chooseYourFighter()
-            
+        
             // Choix du personnage qui attaque ou qui se soigne
             if let readline = readLine() {
                 if let choice = Int(readline) {
                     
                     attackOrHeal(choice: choice)
-                    
                     Game.switchPlayer()
                 }
             }
@@ -84,18 +80,13 @@ class Player {
         print(""
                 + "\n1. \(characters[0].name) à \(characters[0].lifePoint) PV et inflige \(characters[0].weapon.damage) dégats avec une \(characters[0].weapon.name) "
                 + "\n2. \(characters[1].name) à \(characters[1].lifePoint) PV et inflige \(characters[1].weapon.damage) dégats avec un \(characters[1].weapon.name)"
-                + "\n3. \(characters[2].name) à \(characters[2].lifePoint) PV et inflige \(characters[2].weapon.damage) dégats avec une \(characters[2].weapon.name) \n"
-        )
+                + "\n3. \(characters[2].name) à \(characters[2].lifePoint) PV et inflige \(characters[2].weapon.damage) dégats avec une \(characters[2].weapon.name) \n")
     }
-    
-    
     
     func checkTeamHealt() {
         
         let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
-        // TO DO : elle verifie si il ya au moin un personnage dans l'equipe de vivant, so ce n'est pas le cas alors appeller la fonction displaywinner. Appeller la fonction checkTeamHealt après chaque attaque
-        // Faire une boucle sur le tableau de personnage d'un joueur pour verifier qu'au moins un personnage à plus de 0 PV
-        if playerToAttack.characters[0].lifePoint <= 0 && playerToAttack.characters[1].lifePoint <= 0 && playerToAttack.characters[2].lifePoint <= 0 { // les 3 joueur on 0 point de vie ou moins
+        if playerToAttack.characters[0].lifePoint <= 0 && playerToAttack.characters[1].lifePoint <= 0 && playerToAttack.characters[2].lifePoint <= 0 {
             print("La partie est terminée, appuyer sur entrer pour afficher le vainqueur")
             if readLine() != nil {
                 Game.displayWinner()
@@ -104,8 +95,6 @@ class Player {
     }
     
     func recap() {
-        
-        let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
         
         print("Récapitulation de l'équipe du \(name) :")
         print("\(characters[0].name): \(characters[0].lifePoint)PV, \(characters[0].weapon.damage) dégats avec une \(characters[0].weapon.name)")
@@ -117,12 +106,10 @@ class Player {
     func attackOrHeal(choice:Int) {
         
         let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
-        
         print("Tu as choisis \(characters[choice-1].name)")
         print(""
                 + "\n1. Rentrer 1 pour attaquer un adversaire"
-                + "\n2. Rentrer 2 pour soigner ton personnage de 15 points de vies"
-        )
+                + "\n2. Rentrer 2 pour soigner ton personnage de 15 points de vies")
         
         //  Choisir de attaquer ou soigner
         if let readline = readLine() {
@@ -166,6 +153,4 @@ class Player {
             }
         }
     }
-    
-    
 }

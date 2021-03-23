@@ -10,10 +10,11 @@ import Foundation
 // Creer la classe game
 class Game {
     
+    static var numberRound = 0
     static var playerTurn = PlayerTurn()
     
     // Switch player
-    static func switchPlayer() {
+     static func switchPlayer() {
         switch Game.playerTurn {
         case .playerOne:
             Game.playerTurn = .playerTwo
@@ -43,49 +44,38 @@ class Game {
         
         playerOne.createTeam()
         playerTwo.createTeam()
-        
-        
         print("Appuyez sur entrer pour commencer le combat" )
         if readLine() != nil {
             Game.startBattle()
         }
     }
-
     
     // fonction commencer le combat
     static func startBattle() {
-        print("Combatez!!!!")
         
+        print("Combatez!!!!")
         while playerOne.characters.count != 0 || playerTwo.characters.count != 0 {
-            
             if playerTurn == .playerOne {
                 playerOne.attackTeam()
             } else {
                 playerTwo.attackTeam()
             }
-            
         }
-        
     }
     
     // fonction qui annonce le vainqueur
     static func displayWinner() {
         
         playerOne.recap()
-
         playerTwo.recap()
-        
+        print("La partie est finie en \(numberRound) round !")
         if playerOne.characters[0].lifePoint <= 0 && playerOne.characters[1].lifePoint <= 0 && playerOne.characters[2].lifePoint <= 0  {
-            
             print("\(playerTwo.name) est le meilleur combattant")
-            
         } else if playerTwo.characters[0].lifePoint <= 0 && playerTwo.characters[1].lifePoint <= 0 && playerTwo.characters[2].lifePoint <= 0  {
-            
             print("\(playerOne.name) est le meilleur combattant !!! ")
         }
     }
 }
-
 
 enum PlayerTurn {
     case playerOne

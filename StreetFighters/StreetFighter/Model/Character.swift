@@ -30,5 +30,4 @@ class Character {
     func healCharacter() {
         lifePoint += 15
     }
-    
 }
