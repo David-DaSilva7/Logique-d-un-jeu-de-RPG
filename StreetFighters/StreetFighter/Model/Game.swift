@@ -14,7 +14,7 @@ class Game {
     static var playerTurn = PlayerTurn()
     
     // Switch player
-     static func switchPlayer() {
+    static func switchPlayer() {
         switch Game.playerTurn {
         case .playerOne:
             Game.playerTurn = .playerTwo
@@ -54,7 +54,8 @@ class Game {
     static func startBattle() {
         
         print("Combatez!!!!")
-        while playerOne.characters.count != 0 || playerTwo.characters.count != 0 {
+        while (playerOne.characters[0].lifePoint > 0 && playerOne.characters[1].lifePoint > 0 && playerOne.characters[2].lifePoint > 0) || (playerTwo.characters[0].lifePoint > 0 && playerTwo.characters[1].lifePoint > 0 && playerTwo.characters[2].lifePoint > 0) {
+            
             if playerTurn == .playerOne {
                 playerOne.attackTeam()
             } else {
