@@ -24,7 +24,7 @@ class Game {
         print("Street Fighter!!!")
         print("Street Fighter est un jeu qui oppose 2 équipes composées de 3 personnages dans un combat sanglant")
         print("Le combat commence, au tour par tour, le joueur 1 choisit le personnage de son équipe qui va combattre, si la partie n'est pas terminée, c'est au tour du joueur 2")
-        print("Si un coffre apparait, vous pouvez prendre l'arme du coffre")
+        print("Si un coffre apparaît, vous pouvez prendre l'arme du coffre")
         print("Si l'intégralité de votre équipe n'a plus de point de vie, la partie est terminée")
         print("")
         print("Appuyez sur entrer pour commencer la partie")
@@ -43,7 +43,7 @@ class Game {
     }
     // Start the fight function
     static func startBattle() {
-        print("Combatez!!!!")
+        print("Combattez !!!")
         while (playerOne.characters[0].lifePoint > 0 && playerOne.characters[1].lifePoint > 0 && playerOne.characters[2].lifePoint > 0) || (playerTwo.characters[0].lifePoint > 0 && playerTwo.characters[1].lifePoint > 0 && playerTwo.characters[2].lifePoint > 0) {
             if playerTurn == .playerOne {
                 playerOne.attackTeam()

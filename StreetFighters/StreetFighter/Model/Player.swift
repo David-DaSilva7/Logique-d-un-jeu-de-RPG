@@ -44,13 +44,13 @@ class Player {
     // Function to choose the character who will attack or receive a heal
     func chooseYourFighter() {
         if characters[0].lifePoint > 0 {
-            print("Rentrer 1 pour choisir votre 1er combattant : \(characters[0].name) à \(characters[0].lifePoint) PV et inflige \(characters[0].weapon.damage) dégats avec \(characters[0].weapon.name)")
+            print("Rentrez 1 pour choisir votre 1er combattant : \(characters[0].name) à \(characters[0].lifePoint) PV et inflige \(characters[0].weapon.damage) dégats avec \(characters[0].weapon.name)")
         }
         if characters[1].lifePoint > 0 {
-            print("Rentrer 2 pour choisir votre 2ème combattant : \(characters[1].name) à \(characters[1].lifePoint) PV et inflige \(characters[1].weapon.damage) dégats avec \(characters[1].weapon.name)")
+            print("Rentrez 2 pour choisir votre 2ème combattant : \(characters[1].name) à \(characters[1].lifePoint) PV et inflige \(characters[1].weapon.damage) dégats avec \(characters[1].weapon.name)")
         }
         if characters[2].lifePoint > 0 {
-            print("Rentrer 3 pour choisir votre 3ème combattant : \(characters[2].name) à \(characters[2].lifePoint) PV et inflige \(characters[2].weapon.damage) dégats avec \(characters[2].weapon.name)")
+            print("Rentrez 3 pour choisir votre 3ème combattant : \(characters[2].name) à \(characters[2].lifePoint) PV et inflige \(characters[2].weapon.damage) dégats avec \(characters[2].weapon.name)")
         }
     }
     // function to start the game
@@ -99,7 +99,7 @@ class Player {
     func checkTeamHealt() {
         let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
         if playerToAttack.characters[0].lifePoint <= 0 && playerToAttack.characters[1].lifePoint <= 0 && playerToAttack.characters[2].lifePoint <= 0 {
-            print("La partie est terminée, appuyer sur entrer pour afficher le vainqueur")
+            print("La partie est terminée, appuyez sur entrer pour afficher le vainqueur")
             if readLine() != nil {
                 Game.displayWinner()
             }
@@ -123,8 +123,8 @@ class Player {
             let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
             print("Tu as choisis \(characters[choice-1].name): \(characters[choice-1].lifePoint)PV, \(characters[choice-1].weapon.damage) dégats avec \(characters[choice-1].weapon.name)")
             print(""
-                    + "\n1. Rentrer 1 pour attaquer un adversaire"
-                    + "\n2. Rentrer 2 pour soigner ton personnage de 15 points de vies")
+                    + "\n1. Rentrez 1 pour attaquer un adversaire"
+                    + "\n2. Rentrez 2 pour soigner ton personnage de 15 points de vies")
             //  Choose to attack or heal
             if let readline = readLine() {
                 if let choiceAttack = Int(readline){
@@ -133,13 +133,13 @@ class Player {
                         print("J'attaque un personnage adverse")
                         print("")
                         if playerToAttack.characters[0].lifePoint > 0 {
-                            print("Rentrer 1 pour combattre : \(playerToAttack.characters[0].name): \(playerToAttack.characters[0].lifePoint)PV")
+                            print("Rentrez 1 pour combattre : \(playerToAttack.characters[0].name): \(playerToAttack.characters[0].lifePoint)PV")
                         }
                         if playerToAttack.characters[1].lifePoint > 0 {
-                            print("Rentrer 2 pour combattre : \(playerToAttack.characters[1].name): \(playerToAttack.characters[1].lifePoint)PV")
+                            print("Rentrez 2 pour combattre : \(playerToAttack.characters[1].name): \(playerToAttack.characters[1].lifePoint)PV")
                         }
                         if playerToAttack.characters[2].lifePoint > 0 {
-                            print("Rentrer 3 pour combattre : \(playerToAttack.characters[2].name): \(playerToAttack.characters[2].lifePoint)PV")
+                            print("Rentrez 3 pour combattre : \(playerToAttack.characters[2].name): \(playerToAttack.characters[2].lifePoint)PV")
                         }
                         // Choose the opposing character to attack
                         if let readline = readLine() {
