@@ -7,16 +7,14 @@
 
 import Foundation
 
-// Arme dans le coffre
+// Class Chest with the news weapons
 class Chest {
-    
-    // arme aleatoire qu'on peut avoir dans un coffre
+    // random weapon that you can have in a chest
     let randomWeapons: [Weapon] = [
-        Weapon(damage: 45 , name: "Parapluie🌂"),
-        Weapon(damage: 20, name: "Couteau 🔪"),
-        Weapon(damage: 5, name: "Ciseau ✂️")]
-    
-    // Fonction qui choisit l'arme aléatoire du coffre
+        Weapon(damage: 45 , name: "un Parapluie🌂"),
+        Weapon(damage: 20, name: "un Couteau 🔪"),
+        Weapon(damage: 5, name: "un Ciseau ✂️")]
+    // function that chooses the weapon randomly
     func randomWeapon() -> Weapon {
         let ramdomIndex = arc4random_uniform(UInt32(randomWeapons.count))
         return randomWeapons[Int(ramdomIndex)]

@@ -7,26 +7,21 @@
 
 import Foundation
 
-// Classe charactere comprenant les style de chaque personnage
+// Class Character including the characteristics of a character
 class Character {
-    
-    // nom du personnage
+    // Character name
     var name: String
-    
-    //Point de vie du personnage
+    // Character LifePoint
     var lifePoint: Int
-    
-    // Arme
+    // Character Weapon
     var weapon: Weapon
-    
-    //Initialiser tous les éléments
+    // Initialize
     init(name: String, lifePoint: Int, weapon: Weapon) {
         self.name = name
         self.lifePoint = lifePoint
         self.weapon = weapon
     }
-    
-    //Soigner de 15 points de vie un personnage
+    // Heal your character for 15 life points
     func healCharacter() {
         lifePoint += 15
     }

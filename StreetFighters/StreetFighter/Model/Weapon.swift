@@ -7,17 +7,13 @@
 
 import Foundation
 
-// Classe Weapon pour attribuer les dommages de chaque armes
-
+// Class Weapon with the characteristics of a weapon
 class Weapon {
-    
-    //Nom de l'arme et les dommages qu'effectue son arme sur les points de vie
+    // Name of the weapon and the damage done by its weapon on the points of life
     var name: String
     var damage: Int
-    
-    // initialiser
+    // Initialize
     init(damage: Int, name: String){
-        
         self.name = name
         self.damage = damage
     }

@@ -7,13 +7,10 @@
 
 import Foundation
 
-// Creer la classe game
 class Game {
-    
     static var numberRound = 0
     static var playerTurn = PlayerTurn()
-    
-    // Switch player
+    // Change player between turns
     static func switchPlayer() {
         switch Game.playerTurn {
         case .playerOne:
@@ -22,10 +19,8 @@ class Game {
             Game.playerTurn = .playerOne
         }
     }
-    
-    // fonction pour introduire la partie
-    static func StartGame() {
-        
+    // Function to introduce the part
+    static func startGame() {
         print("Street Fighter!!!")
         print("Street Fighter est un jeu qui oppose 2 équipes composées de 3 personnages dans un combat sanglant")
         print("Le combat commence, au tour par tour, le joueur 1 choisit le personnage de son équipe qui va combattre, si la partie n'est pas terminée, c'est au tour du joueur 2")
@@ -33,15 +28,12 @@ class Game {
         print("Si l'intégralité de votre équipe n'a plus de point de vie, la partie est terminée")
         print("")
         print("Appuyez sur entrer pour commencer la partie")
-        
         if readLine() != nil {
             Game.createTeams()
         }
     }
-    
-    // Fonction pour créer son équipe
+    // Function for the 2 players to create their team
     static func createTeams() {
-        
         playerOne.createTeam()
         playerTwo.createTeam()
         print("Appuyez sur entrer pour commencer le combat" )
@@ -49,13 +41,10 @@ class Game {
             Game.startBattle()
         }
     }
-    
-    // fonction commencer le combat
+    // Start the fight function
     static func startBattle() {
-        
         print("Combatez!!!!")
         while (playerOne.characters[0].lifePoint > 0 && playerOne.characters[1].lifePoint > 0 && playerOne.characters[2].lifePoint > 0) || (playerTwo.characters[0].lifePoint > 0 && playerTwo.characters[1].lifePoint > 0 && playerTwo.characters[2].lifePoint > 0) {
-            
             if playerTurn == .playerOne {
                 playerOne.attackTeam()
             } else {
@@ -63,10 +52,8 @@ class Game {
             }
         }
     }
-    
-    // fonction qui annonce le vainqueur
+    // Function that announces the winner
     static func displayWinner() {
-        
         playerOne.recap()
         playerTwo.recap()
         print("La partie est finie en \(numberRound) round !")
@@ -77,15 +64,12 @@ class Game {
         }
     }
 }
-
 enum PlayerTurn {
     case playerOne
     case playerTwo
 }
-
 extension PlayerTurn {
     init() {
         self = .playerOne
     }
 }
-
