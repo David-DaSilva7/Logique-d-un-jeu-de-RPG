@@ -52,21 +52,21 @@ class Player {
         if characters[2].lifePoint > 0 {
             print("Rentrez 3 pour choisir votre 3ème combattant : \(characters[2].name) à \(characters[2].lifePoint) PV et inflige \(characters[2].weapon.damage) dégats avec \(characters[2].weapon.name)")
         }
+        // Choice of character who attacks or heals
+        if let readline = readLine() {
+            if let choice = Int(readline) {
+                randomWeaponMayAppear(choice: choice)
+                attackOrHeal(choice: choice)
+            }
+        }
     }
+    
     // function to start the game
     func attackTeam() {
         Game.numberRound += 1
         if characters[0].lifePoint > 0 || characters[1].lifePoint > 0 || characters[2].lifePoint > 0 {
-            print(" \(name) choisit un personnage de votre équipe, puis un personnage ennemi à attaquer, ou allié à soigner dans le cas d'un soin ")
-            print("")
+            print(" \(name) choisit un personnage de votre équipe, puis un personnage ennemi à attaquer, ou allié à soigner dans le cas d'un soin\n")
             chooseYourFighter()
-            // Choice of character who attacks or heals
-            if let readline = readLine() {
-                if let choice = Int(readline) {
-                    randomWeaponMayAppear(choice: choice)
-                    attackOrHeal(choice: choice)
-                }
-            }
         }
     }
     // Team creation function
@@ -103,10 +103,12 @@ class Player {
             if readLine() != nil {
                 Game.displayWinner()
             }
+        }else{
+            Game.switchPlayer()
         }
     }
     // Team summary function
-    func recap() {
+    func recapTeam() {
         print("Récapitulation de l'équipe du \(name) :")
         print("\(characters[0].name): \(characters[0].lifePoint)PV, \(characters[0].weapon.damage) dégats avec \(characters[0].weapon.name)")
         print("\(characters[1].name): \(characters[0].lifePoint)PV, \(characters[1].weapon.damage) dégats avec \(characters[1].weapon.name)")
@@ -130,8 +132,7 @@ class Player {
                 if let choiceAttack = Int(readline){
                     switch choiceAttack {
                     case 1:
-                        print("J'attaque un personnage adverse")
-                        print("")
+                        print("J'attaque un personnage adverse\n")
                         if playerToAttack.characters[0].lifePoint > 0 {
                             print("Rentrez 1 pour combattre : \(playerToAttack.characters[0].name): \(playerToAttack.characters[0].lifePoint)PV")
                         }
@@ -152,13 +153,11 @@ class Player {
                                     print("Tu attaques \(playerToAttack.characters[choiceOpponent-1].name)")
                                     playerToAttack.characters[choiceOpponent-1].lifePoint = playerToAttack.characters[choiceOpponent-1].lifePoint - characters[choice-1].weapon.damage
                                     if playerToAttack.characters[choiceOpponent-1].lifePoint > 0 {
-                                    print("\(playerToAttack.characters[choiceOpponent-1].name) à \(playerToAttack.characters[choiceOpponent-1].lifePoint) points de vies")
+                                    print("\(playerToAttack.characters[choiceOpponent-1].name) à \(playerToAttack.characters[choiceOpponent-1].lifePoint) points de vies\n")
                                     } else {
-                                        print("\(playerToAttack.characters[choiceOpponent-1].name) est à terre")
+                                        print("\(playerToAttack.characters[choiceOpponent-1].name) est à terre\n")
                                     }
-                                    print("")
                                     checkTeamHealt()
-                                    Game.switchPlayer()
                                 }
                             }
                         }
