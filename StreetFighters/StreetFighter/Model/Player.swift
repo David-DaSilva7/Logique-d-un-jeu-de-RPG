@@ -10,13 +10,16 @@ import Foundation
 class Player {
     // variable for player names
     var name: String
+    
     // table of characters
     var characters: [Character] = []
+    
     //Initialize
     init(name: String, characters: [Character]){
         self.name = name
         self.characters = characters
     }
+    
     // function for the chests to appear
     func randomWeaponMayAppear(choice: Int) {
         if Game.numberRound == randomRoundChestForPlayerOne || Game.numberRound == randomRoundChestForPlayerTwo {
@@ -41,6 +44,7 @@ class Player {
             }
         }
     }
+    
     // Function to choose the character who will attack or receive a heal
     func chooseYourFighter() {
         if characters[0].lifePoint > 0 {
@@ -69,6 +73,7 @@ class Player {
             chooseYourFighter()
         }
     }
+    
     // Team creation function
     func createTeam() {
         for i in 0...2 {
@@ -95,6 +100,7 @@ class Player {
                 + "\n2. \(characters[1].name) à \(characters[1].lifePoint) PV et inflige \(characters[1].weapon.damage) dégats avec \(characters[1].weapon.name)"
                 + "\n3. \(characters[2].name) à \(characters[2].lifePoint) PV et inflige \(characters[2].weapon.damage) dégats avec \(characters[2].weapon.name) \n")
     }
+    
     // Function that checks if the game is over
     func checkTeamHealt() {
         let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
@@ -103,10 +109,9 @@ class Player {
             if readLine() != nil {
                 Game.displayWinner()
             }
-        }else{
-            Game.switchPlayer()
         }
     }
+    
     // Team summary function
     func recapTeam() {
         print("Récapitulation de l'équipe du \(name) :")
@@ -115,13 +120,14 @@ class Player {
         print("\(characters[2].name): \(characters[2].lifePoint)PV, \(characters[2].weapon.damage) dégats avec \(characters[2].weapon.name)")
         print("")
     }
+    
     // Function to attack an opponent or heal an ally
     func attackOrHeal(choice:Int) {
         if choice > 3 {
             print("Veuillez indiquer un nombre compris dans la liste proposée.")
         } else if characters[choice-1].lifePoint <= 0 {
             print("Veuillez indiquer un nombre compris dans la liste proposée.")
-        }else{
+        } else {
             let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
             print("Tu as choisis \(characters[choice-1].name): \(characters[choice-1].lifePoint)PV, \(characters[choice-1].weapon.damage) dégats avec \(characters[choice-1].weapon.name)")
             print(""
@@ -153,11 +159,12 @@ class Player {
                                     print("Tu attaques \(playerToAttack.characters[choiceOpponent-1].name)")
                                     playerToAttack.characters[choiceOpponent-1].lifePoint = playerToAttack.characters[choiceOpponent-1].lifePoint - characters[choice-1].weapon.damage
                                     if playerToAttack.characters[choiceOpponent-1].lifePoint > 0 {
-                                    print("\(playerToAttack.characters[choiceOpponent-1].name) à \(playerToAttack.characters[choiceOpponent-1].lifePoint) points de vies\n")
+                                        print("\(playerToAttack.characters[choiceOpponent-1].name) à \(playerToAttack.characters[choiceOpponent-1].lifePoint) points de vies\n")
                                     } else {
                                         print("\(playerToAttack.characters[choiceOpponent-1].name) est à terre\n")
                                     }
                                     checkTeamHealt()
+                                    Game.switchPlayer()
                                 }
                             }
                         }

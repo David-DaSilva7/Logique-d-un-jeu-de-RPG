@@ -19,13 +19,15 @@ class Game {
             Game.playerTurn = .playerOne
         }
     }
+    
     // Function to introduce the part
     static func startGame() {
         print("Street Fighter!!! \nStreet Fighter est un jeu qui oppose 2 équipes composées de 3 personnages dans un combat sanglant \nLe combat commence, au tour par tour, le joueur 1 choisit le personnage de son équipe qui va combattre, si la partie n'est pas terminée, c'est au tour du joueur 2 \nSi un coffre apparaît, vous pouvez prendre l'arme du coffre \nSi l'intégralité de votre équipe n'a plus de point de vie, la partie est terminée \nAppuyez sur entrer pour commencer la partie")
         if readLine() != nil {
             Game.createTeams()
-        }
+        } 
     }
+    
     // Function for the 2 players to create their team
     static func createTeams() {
         playerOne.createTeam()
@@ -35,6 +37,7 @@ class Game {
             Game.startBattle()
         }
     }
+    
     // Start the fight function
     static func startBattle() {
         print("Combattez !!!")
@@ -46,6 +49,7 @@ class Game {
             }
         }
     }
+    
     // Function that announces the winner
     static func displayWinner() {
         playerOne.recapTeam()
@@ -58,6 +62,7 @@ class Game {
         }
     }
 }
+
 enum PlayerTurn {
     case playerOne
     case playerTwo

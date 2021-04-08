@@ -12,7 +12,7 @@ class Chest {
     // random weapon that you can have in a chest
     let randomWeapons: [Weapon] = [
         Weapon(damage: 45 , name: "un Parapluie🌂"),
-        Weapon(damage: 20, name: "un Couteau 🔪"),
+        Weapon(damage: 25, name: "un Couteau 🔪"),
         Weapon(damage: 5, name: "un Ciseau ✂️")]
     // function that chooses the weapon randomly
     func randomWeapon() -> Weapon {
