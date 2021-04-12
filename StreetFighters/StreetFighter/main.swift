@@ -8,8 +8,8 @@
 import Foundation
 
 // Life point table
-var lifePointsPlayerOne = [30,40,35]
-var lifePointsPlayerTwo = [25,30,30]
+var lifePointsPlayerOne = [40,35,30]
+var lifePointsPlayerTwo = [45,35,25]
 // Weapons table with the damage caused
 var weaponsPlayerOne = [Weapon(damage: 20, name: "une Épée 🗡"),
                         Weapon(damage: 25, name: "un Pistolet 🔫"),
@@ -21,8 +21,8 @@ var weaponsPlayerTwo =  [Weapon(damage: 20, name: "une Scie 🪚"),
 var playerOne = Player(name: "Joueur 1", characters: [])
 var playerTwo = Player(name: "Joueur 2", characters: [])
 // Variable for the chest
-let roundsForPlayerOne = [1, 3, 5, 7, 9, 11]
-let roundsForPlayerTwo = [2, 4, 6, 8, 10, 12]
+let roundsForPlayerOne = [1, 3, 5]
+let roundsForPlayerTwo = [2, 4, 6]
 let randomRoundChestForPlayerOne = roundsForPlayerOne.randomElement()
 let randomRoundChestForPlayerTwo = roundsForPlayerTwo.randomElement()
 let chest = Chest()
