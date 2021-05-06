@@ -10,7 +10,7 @@ import Foundation
 // Class Character including the characteristics of a character
 class Character {
     // Character name
-    var name: String
+    let name: String
     // Character LifePoint
     var lifePoint: Int
     // Character Weapon

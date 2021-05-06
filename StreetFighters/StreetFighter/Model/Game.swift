@@ -29,7 +29,7 @@ class Game {
     }
     
     // Function for the 2 players to create their team
-    static func createTeams() {
+    fileprivate static func createTeams() {
         playerOne.createTeam()
         playerTwo.createTeam()
         print("Appuyez sur entrer pour commencer le combat" )
@@ -39,7 +39,7 @@ class Game {
     }
     
     // Start the fight function
-    static func startBattle() {
+    fileprivate static func startBattle() {
         print("Combattez !!!")
         while (playerOne.characters[0].lifePoint > 0 || playerOne.characters[1].lifePoint > 0 || playerOne.characters[2].lifePoint > 0) || (playerTwo.characters[0].lifePoint > 0 || playerTwo.characters[1].lifePoint > 0 || playerTwo.characters[2].lifePoint > 0) {
             if playerTurn == .playerOne {

@@ -10,8 +10,8 @@ import Foundation
 // Class Weapon with the characteristics of a weapon
 class Weapon {
     // Name of the weapon and the damage done by its weapon on the points of life
-    var name: String
-    var damage: Int
+    let name: String
+    let damage: Int
     // Initialize
     init(damage: Int, name: String){
         self.name = name

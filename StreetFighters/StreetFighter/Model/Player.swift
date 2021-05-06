@@ -14,7 +14,7 @@ class Player {
     // table of characters
     var characters: [Character] = []
     
-    //Initialize
+    //Initialize§
     init(name: String, characters: [Character]){
         self.name = name
         self.characters = characters
@@ -22,22 +22,26 @@ class Player {
     
     // Team creation function
     func createTeam() {
-        for i in 0...2 {
-            if i == 0 {
+        var characterIndex = 0
+        while characterIndex < 3 {
+            if characterIndex == 0 {
                 print("\(name) choisissez le nom de votre 1er combattant")
-            } else if i == 1 {
+            } else if characterIndex == 1 {
                 print("\(name) choisissez le nom de votre 2ème combattant")
             } else {
                 print("\(name) choisissez le nom de votre 3ème combattant")
             }
-            if let named = readLine() {
+            if let named = readLine()?.keepLettersOnly,!named.isEmpty {
                 print("Votre combattant se nomme \(named)")
                 print("")
                 if self.name == "Joueur 1" {
-                    characters.append(Character(name: "\(named)", lifePoint: lifePointsPlayerOne[i], weapon: weaponsPlayerOne[i]))
+                    characters.append(Character(name: "\(named)", lifePoint: lifePointsPlayerOne[characterIndex], weapon: weaponsPlayerOne[characterIndex]))
                 } else {
-                    characters.append(Character(name: "\(named)", lifePoint: lifePointsPlayerTwo[i], weapon: weaponsPlayerTwo[i]))
+                    characters.append(Character(name: "\(named)", lifePoint: lifePointsPlayerTwo[characterIndex], weapon: weaponsPlayerTwo[characterIndex]))
                 }
+                characterIndex += 1
+            } else {
+                print("Veuillez donner un nom valide à votre personnage")
             }
         }
         print("Votre équipe est constituée de :")
@@ -48,7 +52,7 @@ class Player {
     }
     
     // function for the chests to appear
-    func randomWeaponMayAppear(choice: Int) {
+    fileprivate func randomWeaponMayAppear(choice: Int) {
         if Game.numberRound == randomRoundChestForPlayerOne || Game.numberRound == randomRoundChestForPlayerTwo {
             print("🎁 Cadeau !!! Une arme secrète plus ou moins puissante que votre arme actuelle, voulez vous la prendre ? ")
             print(""
@@ -82,7 +86,7 @@ class Player {
     }
     
     // Function to choose the character who will attack or receive a heal
-    func chooseYourFighter() {
+    fileprivate func chooseYourFighter() {
         if characters[0].lifePoint > 0 {
             print("Rentrez 1 pour choisir votre 1er combattant : \(characters[0].name) à \(characters[0].lifePoint) PV et inflige \(characters[0].weapon.damage) dégats avec \(characters[0].weapon.name)")
         }
@@ -102,7 +106,7 @@ class Player {
     }
     
     // Function that checks if the game is over
-    func checkTeamHealt() {
+    fileprivate func checkTeamHealt() {
         let playerToAttack = Game.playerTurn == .playerOne ? playerTwo : playerOne
         if playerToAttack.characters[0].lifePoint <= 0 && playerToAttack.characters[1].lifePoint <= 0 && playerToAttack.characters[2].lifePoint <= 0 {
             print("La partie est terminée, appuyez sur entrer pour afficher le vainqueur")
@@ -113,7 +117,7 @@ class Player {
     }
     
     // Function to attack an opponent or heal an ally
-    func attackOrHeal(choice:Int) {
+    fileprivate func attackOrHeal(choice:Int) {
         if choice > 3 {
             print("Veuillez indiquer un nombre compris dans la liste proposée.")
         } else if characters[choice-1].lifePoint <= 0 {
